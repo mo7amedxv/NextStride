@@ -1,0 +1,1215 @@
+:root {
+    --bg-main: #F7F9FC;
+    --bg-surface: #FFFFFF;
+    --bg-elevated: #EEF2F7;
+
+    --primary: #2563EB;        /* Blue */
+    --primary-hover: #1D4ED8;
+
+    --accent: #0F172A;         /* Almost black */
+
+    --text-main: #0F172A;
+    --text-muted: #64748B;
+
+    --border-soft: #E2E8F0;
+}
+:root {
+    --bg-main: #0B0F19;
+    --bg-surface: #121826;
+    --bg-elevated: #1A2138;
+
+    --primary: #3B82F6;        /* Royal Blue */
+    --primary-hover: #60A5FA;
+
+    --accent: #E5E7EB;         /* Silver */
+
+    --text-main: #F9FAFB;
+    --text-muted: #9CA3AF;
+
+    --border-soft: #1F2937;
+}
+:root {
+    --bg-main: #FAFAF9;
+    --bg-surface: #FFFFFF;
+    --bg-elevated: #F1F5F1;
+
+    --primary: #3F5D45;        /* Olive */
+    --primary-hover: #2F4A36;
+
+    --accent: #C2A878;         /* Sand */
+
+    --text-main: #1C1C1C;
+    --text-muted: #6B7280;
+
+    --border-soft: #E5E7EB;
+}
+:root {
+    --bg-main: #0F0F0F;
+    --bg-surface: #1A1A1A;
+    --bg-elevated: #242424;
+
+    --primary: #FFFFFF;
+    --primary-hover: #D4D4D4;
+
+    --accent: #FFFFFF;
+
+    --text-main: #FFFFFF;
+    --text-muted: #A3A3A3;
+
+    --border-soft: #2A2A2A;
+}
+
+/*===============================
+   RESET CSS كامل
+   =============================== */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+    background: none;
+    border: none;
+    outline: none;
+    font: inherit;
+    color: inherit;
+}
+
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+}
+
+body {
+    line-height: 1.5;
+    font-family: 'Lexend', sans-serif;
+    padding-top: 4rem;
+}
+
+main,
+section,
+article,
+aside,
+header,
+footer,
+nav,
+figure {
+    display: block;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth !important; 
+}
+
+.hero {
+    width: 100%;
+    height: calc(100vh - 4rem);
+    overflow: hidden;
+}
+
+.hero-track {
+    width: 100%;
+    height: 100%;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===============================
+   SECTIONS & CARDS
+   =============================== */
+
+.shoe-type-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+}
+
+.shoe-type-card h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.shoe-desc {
+    font-size: 14px;
+    color: #666;
+}
+
+.shoe-type {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 95vh;
+}
+
+.shoe-type:target {
+    scroll-margin-top: 70px;
+}
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    border-radius: 14px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.24);
+    padding: 1rem;
+    transition: all .3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card img {
+    width: 100%;
+    max-width: 186px;
+    height: auto;
+    object-fit: contain;
+}
+
+.card .shoe-desc {
+    font-size: 1.05rem;
+}
+
+.shoe-price {
+    font-weight: 700;
+    color: #3F51B5;
+    font-size: 1.5rem;
+}
+
+button {
+    display: grid;
+    place-items: center;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    transition: all .3s ease;
+    border-radius: 10px;
+    padding: 0.6rem 1rem;
+}
+
+button img {
+    max-width: 30px;
+    max-height: 30px;
+        filter: invert(1);
+}
+
+button .cart {
+    font-family: 'Lexend', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+button:hover {
+    transform: translateY(-6px);
+}
+
+.rating {
+    font-size: 1.1rem;
+}
+
+/* ===============================
+   RESPONSIVE & HAMBURGER
+   =============================== */
+   .hamburger {
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    width: 25px;
+    height: 20px;
+    justify-content: space-between;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+                background-color: black;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Mobile menu */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    nav ul {
+        flex-direction: column;
+        border-radius: 10px;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 150px;
+        display: none;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+
+    /* Transform hamburger to X */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: black;
+        }        nav ul.active { display:flex; }
+
+        /* Transform hamburger to X */
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+    
+
+        /* Mobile menu */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                background-color: #E3F2FD;
+                text-align: center;
+                width: 150px;
+                display: none;
+                border-radius: 5px;
+                color: black;
+                backdrop-filter: blur(5px);
+                gap: 0;
+            }
+            nav ul a{
+                display: block;
+                padding: 10px;
+            }
+              nav ul a:hover{
+                background-color: #3f51b5;
+                color: white;
+              }
+            .hamburger {
+                display: flex;
+            }
+        }
+/* ===============================
+   ABOUT & CONTACT
+   =============================== */
+.about {
+    padding: 2rem;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.about h1 {
+    line-height: 2.2;
+    font-size: 2.5rem;
+}
+
+.about span {
+    color: #3F51B5;
+    font-weight: 600;
+}
+
+.about p {
+    font-size: 1.42rem;
+    line-height: 2;
+}
+
+.contact {
+    display: grid;
+    width: 100%;
+    padding: 0 3rem;
+    background-color: #3f51b5;
+    color: #f5f5f5;
+    gap: 2rem;
+}
+
+.contact h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: white;
+}
+
+.contact > p {
+    color: #ffffff;
+}
+
+.contact span {
+    color: #f5c542;
+    font-weight: 600;
+}
+
+.contact form {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact input,
+.contact textarea {
+    background: #1c1c1c;
+    border: 1px solid #333;
+    padding: 14px 16px;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 6px;
+    outline: none;
+}
+
+.contact input::placeholder,
+.contact textarea::placeholder {
+    color: #888;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    border-color: #3f51b5;
+    box-shadow: 0 0 0 2px rgba(245, 197, 66, 0.2);
+}
+
+.contact textarea {
+    min-height: 120px;
+    resize: none;
+}
+
+.contact button {
+    margin-top: 10px;
+    background: #1c1c1c;
+    text-align: center;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.3s ease;
+}
+
+
+/* ===============================
+   SCROLL TO TOP BUTTON
+   =============================== */
+#scrollTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 999;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(20px);
+
+}
+
+#scrollTopBtn.show {
+    display: grid;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#scrollTopBtn img {
+    width: 100%;
+    height: 100%;
+}
+header {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto;
+    align-items: center;
+    background: #1c1c1c; /* دارك مود */
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.shop-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #e0e0e0;
+    font-weight: 600;
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+    color: #e0e0e0;
+}
+
+
+
+/* ===============================
+   HERO SECTION
+   =============================== */
+.hero {
+    width: 100%;
+    height: calc(100vh - 4rem);
+    overflow: hidden;
+    background-color: #1e1e1e;
+}
+
+.hero-track {
+    width: 100%;
+    height: 100%;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+}
+
+/* ===============================
+   SECTIONS & CARDS
+   =============================== */
+.shoe-types-list {
+    background-color: #1e1e1e;
+    padding: 3rem;
+}
+
+.shoe-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 3rem;
+    color: #e0e0e0;
+}
+
+.shoe-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.shoe-type-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    background: #272727;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    color: #e0e0e0;
+    transition: 0.3s ease;
+}
+
+.shoe-type-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.shoe-type-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+}
+
+.shoe-type-card h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.shoe-desc {
+    font-size: 14px;
+    color: #b0b0b0;
+}
+
+.shoe-type {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1e1e1e;
+    text-align: center;
+    min-height: 95vh;
+    color: #e0e0e0;
+}
+
+.shoe-type:target {
+    scroll-margin-top: 70px;
+}
+
+.shoe-type h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    padding: 3rem 0 0 0;
+    font-size: 2.5rem;
+    color: #ffca28;
+}
+
+.section-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: #b0b0b0;
+    text-align: center;
+    margin: 1rem 0 2rem 0;
+    font-weight: 500;
+}
+
+.shoe-type-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    width: 100%;
+    padding: 1rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    border-radius: 14px;
+    background-color: #272727;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    padding: 1rem;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card img {
+    width: 100%;
+    max-width: 186px;
+    height: auto;
+    object-fit: contain;
+}
+
+.card .shoe-desc {
+    font-size: 1.05rem;
+    color: #b0b0b0;
+}
+
+.shoe-price {
+    font-weight: 700;
+    color: #ffca28;
+    font-size: 1.5rem;
+}
+
+button.buy {
+    display: grid;
+    place-items: center;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    padding: 0.6rem 1rem;
+    background-color: #3f51b5;
+    color: #fff;
+}
+
+button.buy:hover {
+    background-color: #5c6bc0;
+    transform: translateY(-4px);
+}
+
+.rating {
+    font-size: 1.1rem;
+    color: #ffca28;
+}
+
+
+
+/* ===============================
+   RESPONSIVE & HAMBURGER
+   =============================== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    width: 25px;
+    height: 20px;
+    justify-content: space-between;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    background-color: #e0e0e0;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #272727;
+        text-align: center;
+        width: 150px;
+        display: none;
+        border-radius: 5px;
+        gap: 0;
+    }
+
+    nav ul a {
+        display: block;
+        padding: 10px;
+        color: #e0e0e0;
+    }
+
+    nav ul a:hover {
+        background-color: #3f51b5;
+        color: #fff;
+    }
+
+    nav ul.active { display:flex; }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+    footer ul {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* ===============================
+   SCROLL TO TOP BUTTON
+   =============================== */
+
+#scrollTopBtn.show {
+    display: grid;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#scrollTopBtn img {
+    width: 100%;
+    height: 100%;
+}/* ===============================
+   LUXURY DARK – COLORS ONLY
+   =============================== */
+
+/* BODY & GLOBAL */
+body {
+    background-color: #0B0F19;
+    color: #F9FAFB;
+}
+
+/* HEADER & NAV */
+header {
+    background-color: #0F172A;
+    border-bottom: 1px solid #1F2937;
+}
+
+.shop-logo {
+    color: #E5E7EB;
+}
+
+nav a {
+    color: #E5E7EB;
+}
+
+nav a:hover {
+    color: #3B82F6;
+}
+
+/* HAMBURGER */
+.hamburger span {
+    background-color: #E5E7EB;
+}
+
+/* MOBILE MENU */
+@media (max-width: 768px) {
+    nav ul {
+        background-color: #111827;
+        color: #E5E7EB;
+    }
+
+    nav ul a:hover {
+        background-color: #1E3A8A;
+        color: #FFFFFF;
+    }
+}
+
+/* HERO & SECTIONS */
+.hero,
+.shoe-types-list,
+.shoe-type {
+    background-color: #0B0F19;
+}
+
+/* TITLES */
+.shoe-title,
+.shoe-type h1 {
+    color: #E5E7EB;
+}
+
+/* CARDS */
+.shoe-type-card,
+.card {
+    background-color: #121826;
+    color: #E5E7EB;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.shoe-desc,
+.card .shoe-desc,
+.section-desc {
+    color: #9CA3AF;
+}
+
+/* PRICE & RATING */
+.shoe-price,
+.rating {
+    color: #3B82F6;
+}
+
+/* BUTTONS */
+button.buy {
+    background-color: #1E3A8A;
+    color: #FFFFFF;
+}
+
+button.buy:hover {
+    background-color: #3B82F6;
+}
+
+/* ABOUT */
+.about span {
+    color: #3B82F6;
+}
+
+/* CONTACT */
+.contact {
+    background-color: #0F172A;
+    color: #E5E7EB;
+    padding: 2rem;
+}
+
+.contact span {
+    color: #3B82F6;
+}
+
+.contact input,
+.contact textarea {
+    background-color: #020617;
+    border-color: #1F2937;
+    color: #F9FAFB;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    border-color: #3B82F6;
+    box-shadow: 0 0 0 2px rgba(59,130,246,0.25);
+}
+
+.contact button {
+    background-color: #1E3A8A;
+    color: #FFFFFF;
+}
+
+/* FOOTER */
+footer {
+    background-color: #020617;
+    color: #E5E7EB;
+}
+
+footer h1 {
+    color: #E5E7EB;
+    font-size: 3rem;
+    
+}
+
+footer li a:hover {
+    color: #60A5FA;
+}
+
+footer p {
+    color: #9CA3AF;
+}
+
+/* SCROLL TO TOP */
+#scrollTopBtn {
+    filter: brightness(0.9);
+}/* ===============================
+   FOOTER – LUXURY DARK STYLE
+   =============================== */
+
+.footer {
+    background-color: #020617;
+    color: #E5E7EB;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border-top: 1px solid #1F2937;
+}
+
+/* TITLE */
+.footer h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #3B82F6;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* LINKS LIST */
+.footer ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+}
+
+/* LINK ITEM */
+.footer li {
+    background-color: #0F172A;
+    border: 1px solid #1F2937;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* LINK */
+.footer li a {
+    display: block;
+    padding: 0.9rem 1rem;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: #E5E7EB;
+    transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.footer li:hover {
+    transform: translateY(-4px);
+    border-color: #3B82F6;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+.footer li:hover a {
+    color: #60A5FA;
+}
+
+/* COPYRIGHT */
+.footer p {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #9CA3AF;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .footer ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===============================
+   MOBILE HAMBURGER – LUXURY DARK
+   =============================== */
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* LINES */
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #E5E7EB; /* Silver */
+    border-radius: 6px;
+    transition: all 0.35s ease;
+}
+
+/* ACTIVE → X */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+    background-color: #3B82F6;
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+    background-color: #3B82F6;
+}
+
+/* TOUCH FEEDBACK */
+.hamburger:active {
+    transform: scale(0.95);
+}
+
+/* MOBILE ONLY */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+}/* Base font */
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header */
+header .shop-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+nav a {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+/* Shoe Types List */
+.shoe-types-list h1 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Shoe Type Cards */
+.shoe-types .shoe-type-card h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.shoe-types .shoe-type-card .shoe-desc {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Individual Shoe Type Section */
+.shoe-type h1 {
+    font-size: 1.9rem;
+    font-weight: 700;
+}
+.shoe-type .section-desc {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Product Cards */
+.card h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+.card .shoe-desc {
+    font-size: 1rem;
+    font-weight: 400;
+}
+.card .shoe-price {
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+.card button {
+    font-size: 1rem;
+    font-weight: 600;
+}
+.card .rating {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* About Section */
+.about h1 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+.about p {
+    font-size: 1rem;
+    font-weight: 400;
+}
+.about .highlight {
+    font-weight: 600;
+}
+
+/* Contact Section */
+.contact h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+.contact p, .contact span {
+    font-size: 1rem;
+    font-weight: 400;
+}
+.contact input, .contact textarea {
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+.contact button {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Footer */
+.footer h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.footer li a {
+    font-size: 1rem;
+    font-weight: 500;
+}
+.footer p {
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+/* Misc */
+.arrow img {
+    width: 40px;
+    height: 40px;
+}
+::selection {
+    background-color: rgb(59, 130, 246);
+    color: black;
+}
+span::selection {
+color: white;
+}/* Scrollbar عام */
+::-webkit-scrollbar {
+    width: 12px;   /* عرض الشريط العمودي */
+    height: 12px;  /* عرض الشريط الأفقي */
+}
+
+/* مسار السكروول */
+::-webkit-scrollbar-track {
+    background-color: var(--bg-surface);  /* لون الخلفية حسب الموقع */
+    /* border-radius: 6px; */
+}
+
+/* المقبض */
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary);    /* اللون الرئيسي */
+    border-radius: 6px;
+    border: 3px solid var(--bg-surface); /* مسافة بين المقبض والحافة */
+}
+
+/* عند التحويم */
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--primary-hover);  /* اللون عند hover */
+}
+
+/* Optional: لمسة لطيفة على المسار عند hover */
+::-webkit-scrollbar-track:hover {
+    background-color: var(--bg-elevated);
+}
+html {
+    scroll-behavior: smooth !important; 
+}
